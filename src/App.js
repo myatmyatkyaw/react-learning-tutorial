@@ -1,17 +1,30 @@
-//import logo from './react.png';
-import './App.css';
-import Block1 from './Block1';
-import Block2 from './Block2';
-import Block3 from './Block3';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import Navbar from './Navbar';
+import Home from './Home';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Create from './Create';
+import BlogDetails from './BlogDetails';
 
 function App() {
   return (
-   <>
-        <Block1/>
-        <Block2/>
-        <Block3/>
-    </>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <div className="content">
+          <Switch>
+            <Route exact path="/">
+
+              <Home />
+            </Route>
+            <Route path="/create">
+              <Create />
+            </Route>
+            <Route path="/blogs/:id">
+              <BlogDetails />
+            </Route>
+            </Switch>
+        </div>
+      </div>
+    </Router>
   );
 }
 
