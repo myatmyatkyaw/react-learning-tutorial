@@ -3,7 +3,7 @@ import BlogList from "./BlogList";
 import useFetch from "./useFetch";
 
 const Home = () => {
-  const { error, isPending, data: blogs } = useFetch('http://json-server-brown-two.vercel.app/blogs')
+  const { error, isPending, data: blogs } = useFetch('https://json-server-brown-two.vercel.app/blogs/')
 
   return (
     <div className="home">
